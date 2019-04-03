@@ -12,14 +12,14 @@ the list is sorted */
 function bubbleSort(numArray) {
   for(let i = 0; i < numArray.length;i++){
       for(let j = 1; i+j < numArray.length; j++){
-          console.log(i,i+j)
           if(numArray[i] > numArray[i+j]){
-            console.log('true',numArray[i], numArray[j])
-            let temp = numArray[i];
-            numArray[i] = numArray[j];
-            numArray[j] = temp
-          } else {
-            console.log('false',numArray[i], numArray[j])
+              console.log('true', numArray[i], "is greater than", numArray[i+j])
+              let temp = numArray[i];
+              numArray[i] = numArray[i+j]
+              numArray[i+j] = temp
+          } 
+          else {
+
         }
       }
   }
@@ -27,7 +27,7 @@ function bubbleSort(numArray) {
 }
 
 
-let basicArray = [ 1, 5, 3]
+let basicArray = [ 10, 5, 3, 7, 7, 9, 10, 2, 3, 5]
 console.log(bubbleSort(basicArray))
  
 
