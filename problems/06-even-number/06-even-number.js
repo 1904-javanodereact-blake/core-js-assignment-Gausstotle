@@ -3,7 +3,7 @@ Define function: isEven(someNum)
 Return true if even, false if odd.
 Do not use % operator. */
 function isEven(someNum) {
-    if(someNum % 2 === 0){
+    if(Math.floor(someNum/2) === Math.ceil(someNum/2)){
         return true
     }
     else {

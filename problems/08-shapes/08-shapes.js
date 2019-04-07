@@ -21,5 +21,59 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  
+  switch (shape) {
+    case 'Square':
+      let squareRow = ''
+      for (let i = 0; i < height; i++) {
+        squareRow += character;
+      }
+      for (let j = 0; j < height; j++) {
+        console.log(squareRow)
+      }
+      break;
+    case 'Triangle':
+      let triangleRow = ''
+      for (let i = 0; i < height; i++) {
+        triangleRow += character
+        console.log(triangleRow)
+      }
+
+
+
+
+
+    case 'Diamond':
+      let diamondRow = '';
+      let spaceString = ' '; // string used for just the space character
+      for (let i = 0; i < Math.floor(height / 2); i++) {
+        let diamondRow = '';    // reseting diamond row every iteration
+        let mathExpression = (Math.floor((height / 2)) - i);
+        diamondRow += spaceString.repeat(mathExpression);
+        diamondRow += character.repeat(1 + 2 * i)
+        console.log(diamondRow)
+      }
+      for (let i = height; i > Math.floor(height / 2); i--) {
+        let diamondRow = '';    // reseting diamond row every iteration
+        let mathExpression = (Math.floor(i - (height / 2)) );
+        // console.log(mathExpression)
+        diamondRow += spaceString.repeat((height - i));
+        diamondRow += character.repeat(1 + 2 * mathExpression)
+        console.log(diamondRow)
+      }
+      break;
+
+
+
+
+
+
+    default:
+      console.log("Invalid shape");
+  }
 }
+
+// printShape("Square", 3, "%")
+// printShape("Triangle", 3, "$");
+printShape("Diamond", 7, "*");
+printShape("Diamond", 4, "*");
+
